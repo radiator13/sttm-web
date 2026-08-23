@@ -219,11 +219,9 @@ class Baani extends React.PureComponent {
   };
 
   handleNativeCopy = (e) => {
-    const selection = window.getSelection();
     const unicodeText = getUnicodeCopyText({
       unicodeMode: this.props.unicode,
-      selectionAnchorNode: selection && selection.anchorNode,
-      selectionFocusNode: selection && selection.focusNode,
+      selection: window.getSelection(),
     });
 
     if (!unicodeText) {
